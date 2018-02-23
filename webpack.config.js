@@ -1,27 +1,26 @@
-const webpack = require ('webpack');
 const path = require('path');
 
-const app_dir = path.resolve(__dirname, 'client');
-const build_dir = path.resolve(__dirname, 'public')
+const appDir = path.resolve(__dirname, 'client');
+const buildDir = path.resolve(__dirname, 'public');
 
 module.exports = {
-    entry: `${app_dir}/index.jsx`,
-    output: {
-        path: build_dir,
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [
-            {
-              test: /\.(js|jsx)$/,
-              exclude: /node_modules/,
-              use: ['babel-loader']
-            },
-            {
-              test: /\.js$/,
-              exclude: /node_modules/,
-              use: ['babel-loader', 'eslint-loader']
-            }
-        ]
-    }
-}
+	entry: `${appDir}/index.jsx`,
+	output: {
+		path: buildDir,
+		filename: 'bundle.js',
+	},
+	module: {
+	    rules: [
+    	{
+	    		test: /\.(js|jsx)$/,
+	    		exclude: /node_modules/,
+	    		use: ['babel-loader'],
+    	},
+    	{
+	    		test: /\.js$/,
+	    		exclude: /node_modules/,
+	    		use: ['babel-loader', 'eslint-loader'],
+    	},
+	    ],
+	},
+};
