@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> This module describes relatedBusinesses, a module that serves users of any WELP business detail page with advertisements and recommendations of similar businesses related to the focal business of the current detail page. WELP is a Yelp clone that serves users with business information, including ratings, reviews, and related business information.
 
 ## Related Projects
 
