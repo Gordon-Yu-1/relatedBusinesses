@@ -2,7 +2,7 @@ const webpack = require ('webpack');
 const path = require('path');
 
 const app_dir = path.resolve(__dirname, 'client/app');
-const build_dir = path.resolve(__dirname, 'client/public')
+const build_dir = path.resolve(__dirname, 'public')
 
 module.exports = {
     entry: `${app_dir}/app.jsx`,
