@@ -1,11 +1,11 @@
 const webpack = require ('webpack');
 const path = require('path');
 
-const app_dir = path.resolve(__dirname, 'client/app');
+const app_dir = path.resolve(__dirname, 'client');
 const build_dir = path.resolve(__dirname, 'public')
 
 module.exports = {
-    entry: `${app_dir}/app.jsx`,
+    entry: `${app_dir}/index.jsx`,
     output: {
         path: build_dir,
         filename: 'bundle.js'
