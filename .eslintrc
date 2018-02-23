@@ -5,5 +5,5 @@
         "browser": true,
         "node": true
     },
-    "extends": "airbnb"
+    "extends": "airbnb" // hey i want this change
 }
