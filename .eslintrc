@@ -5,8 +5,5 @@
         "browser": true,
         "node": true
     },
-    "extends": "airbnb", 
-    "rules": {
-        "indent": [2, "tab"]
-    }
+    "extends": "airbnb"
 }
