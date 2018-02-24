@@ -1,37 +1,46 @@
 const faker = require('faker');
 
-const fakeData = {};
 
-for (let i = 0; i < 200; i += 1) {
-  fakeData.businessName = faker.company.companyName;
-  fakeData.firstImage = faker.image.business;
-  fakeData.latitude = faker.address.latitude;
-  fakeData.longitude = faker.address.longitude;
-  fakeData.avgRating = Math.floor(Math.random() * 21) / 4;
-  fakeData.quantityRatings = Math.floor(Math.random() * 18000);
-  fakeData.fullReview = faker.lorem.paragraph;
-  const indexOfFirstPeriod = fakeData.fullReview.indexOf('.');
+const generateSingleRelatedBusiness = () => {
+  const singleFakeBiz = {};
+  singleFakeBiz.businessName = faker.company.companyName;
+  singleFakeBiz.firstImage = faker.image.business;
+  singleFakeBiz.latitude = faker.address.latitude;
+  singleFakeBiz.longitude = faker.address.longitude;
+  singleFakeBiz.avgRating = Math.floor(Math.random() * 21) / 4;
+  singleFakeBiz.quantityRatings = Math.floor(Math.random() * 18000);
+  singleFakeBiz.fullReview = faker.lorem.paragraph;
+  const indexOfFirstPeriod = singleFakeBiz.fullReview.indexOf('.');
   if (indexOfFirstPeriod > -1) {
-    fakeData.oneLineReview = fakeData.fullReview.slice(0, indexOfFirstPeriod);
+    singleFakeBiz.oneLineReview = singleFakeBiz.fullReview.slice(0, indexOfFirstPeriod);
   } else {
-    fakeData.oneLineReview = faker.hacker.phrase;
+    singleFakeBiz.oneLineReview = faker.hacker.phrase;
   }
-  fakeData.metatags = [];
-  fakeData.metatags.length = Math.ceil(Math.random() * 5);
-  for (let j = 0; j < fakeData.metatags.length; j += 1) {
-    fakeData.metatags[j] = faker.commerce.department;
+  singleFakeBiz.metatags = [];
+  singleFakeBiz.metatags.length = Math.ceil(Math.random() * 5);
+  for (let j = 0; j < singleFakeBiz.metatags.length; j += 1) {
+    singleFakeBiz.metatags[j] = faker.commerce.department;
   }
-  fakeData.listsWithThisBiz = [];
+  singleFakeBiz.listsWithThisBiz = [];
   const listLength = Math.floor(Math.random() * 4);
   if (listLength < 0) {
     for (let k = 0; k < listLength; k += 1) {
-      fakeData.listsWithThisBiz.push({
+      singleFakeBiz.listsWithThisBiz.push({
         listName: faker.lorem.words,
-        listBusinessesTotal: fakeData.listsWithThisBiz.length,
+        listBusinessesTotal: singleFakeBiz.listsWithThisBiz.length,
         listDescription: faker.lorem.sentences,
       });
     }
   }
-}
+  return singleFakeBiz;
+};
 
-console.log(fakeData.businessName);
+const generateManyRelatedBizs = () => {
+  // always will generate 5 businessesrelated to an input biz.
+  const relatedBusinesses = [];
+  for (let i = 0; i < 5; i += 1) {
+    relatedBusinesses.push(generateSingleRelatedBusiness);
+  }
+  return relatedBusinesses;
+};
+
