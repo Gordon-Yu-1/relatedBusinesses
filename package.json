@@ -10,7 +10,8 @@
   "scripts": {
     "webpack": "webpack",
     "build": "webpack -d",
-    "build:watch": "webpack -d --watch"
+    "build:watch": "webpack -d --watch",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -19,6 +20,8 @@
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
+    "mongo": "^0.1.0",
+    "mongod": "^2.0.0",
     "postgresql": "0.0.1",
     "psql": "0.0.1",
     "react": "^16.2.0",
@@ -38,6 +41,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.2",
     "webpack": "^3.11.0"
   }
 }

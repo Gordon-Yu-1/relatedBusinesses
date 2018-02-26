@@ -10,12 +10,7 @@ const generateSingleRelatedBusiness = () => {
   singleFakeBiz.avgRating = Math.floor(Math.random() * 21) / 4;
   singleFakeBiz.quantityRatings = Math.floor(Math.random() * 18000);
   singleFakeBiz.fullReview = faker.lorem.paragraph;
-  const indexOfFirstPeriod = singleFakeBiz.fullReview.indexOf('.');
-  if (indexOfFirstPeriod > -1) {
-    singleFakeBiz.oneLineReview = singleFakeBiz.fullReview.slice(0, indexOfFirstPeriod);
-  } else {
-    singleFakeBiz.oneLineReview = faker.hacker.phrase;
-  }
+  singleFakeBiz.oneLineReview = faker.lorem.sentence;
   singleFakeBiz.metatags = [];
   singleFakeBiz.metatags.length = Math.ceil(Math.random() * 5);
   for (let j = 0; j < singleFakeBiz.metatags.length; j += 1) {
@@ -39,8 +34,12 @@ const generateManyRelatedBizs = () => {
   // always will generate 5 businessesrelated to an input biz.
   const relatedBusinesses = [];
   for (let i = 0; i < 5; i += 1) {
-    relatedBusinesses.push(generateSingleRelatedBusiness);
+    relatedBusinesses.push(generateSingleRelatedBusiness());
   }
   return relatedBusinesses;
 };
 
+const fakeRelatedBusinesses = generateManyRelatedBizs();
+module.exports = fakeRelatedBusinesses;
+
+// console.log(generateManyRelatedBizs());
