@@ -34,13 +34,10 @@ const save = (businesses) => {
   });
 };
 
-const retrieve = (num = 5, sortBy = 'avgRating', direction = -1) => {
-  if (([-1, 'desc', 'descending']).indexOf(direction) !== -1) {
-    sortBy = `-${sortBy}`;
-  }
+const retrieve = (num = 5) => {
   return new Promise((resolve, reject) => {
     Business.find()
-      .sort(sortBy)
+      .sort('-avgRating')
       .limit(num)
       .exec()
       .then(results => resolve(results))
