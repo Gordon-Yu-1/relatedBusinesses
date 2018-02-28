@@ -20,35 +20,35 @@ const relatedBizSchema = mongoose.Schema({
   listsWithThisBiz: Array, // double check this syntax
 });
 
-// let Repo = mongoose.model('Repo', repoSchema);
+const Business = mongoose.model('Business', relatedBizSchema);
 
-// let save = repos => {
-//     repos.forEach(repo => {
-//       Repo.find({id: repo.id})
-//       .then(docs => {
-//         if (docs.length === 0) {
-//           Repo.create(repo);
-//         } 
-//       })
-//       .catch(error => console.error(error));
-//     });
-// };
+const save = (businesses) => {
+  businesses.forEach((business) => {
+    Business.find({ id: business.id })
+      .then((docs) => {
+        if (docs.length === 0) {
+          Business.create(business);
+        }
+      })
+      .catch(error => console.error(error));
+  });
+};
 
-// let retrieve = (num = 25, sortBy = 'updated', direction = -1) => {
-//   if (([-1, 'desc', 'descending']).indexOf(direction) !== -1) {
-//     sortBy = `-${sortBy}`;
-//   }
-//   return new Promise((resolve, reject) => {
-//     Repo.find()
-//       .sort(sortBy)
-//       .limit(num)
-//       .exec()
-//     .then(results => resolve(results))
-//     .catch(error => reject(error));
-//   });
-// }
+const retrieve = (num = 5, sortBy = 'avgRating', direction = -1) => {
+  if (([-1, 'desc', 'descending']).indexOf(direction) !== -1) {
+    sortBy = `-${sortBy}`;
+  }
+  return new Promise((resolve, reject) => {
+    Business.find()
+      .sort(sortBy)
+      .limit(num)
+      .exec()
+      .then(results => resolve(results))
+      .catch(error => reject(error));
+  });
+};
 
-// console.log('made the schema');
+console.log('made the schema');
 
-// module.exports.save = save;
-// module.exports.retrieve = retrieve;
+module.exports.save = save;
+module.exports.retrieve = retrieve;
