@@ -2,8 +2,8 @@
   "name": "",
   "version": "",
   "description": "",
-  "author": "",
-  "license": "",
+  "author": "awhitneye",
+  "license": "Hack Reactor",
   "engines": {
     "node": ">=6.13.0"
   },
