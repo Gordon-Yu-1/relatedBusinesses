@@ -1,0 +1,4 @@
+#node_module packages:
+**/node_modules
+
+#OS created files:
