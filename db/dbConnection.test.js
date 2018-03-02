@@ -1,16 +1,16 @@
 const {save, retrieve} = require('./seed_db.js');
 
-// describe('fake business generation', () => {
-//   test('should generate an array:', () => {
-//     expect(Array.isArray(fakeBusinesses)).toBe(true);
-//   });
-//   test('should generate an array of objects:', () => {
-//     expect(typeof fakeBusinesses[0]).toBe('object');
-//   });
-//   test('should have 10 properties:', () => {
-//     expect(Object.keys(fakeBusinesses[0]).length).toBe(10);
-//   });
-// });
+describe('fake business generation', () => {
+  test('should generate an array:', () => {
+    expect(Array.isArray(fakeBusinesses)).toBe(true);
+  });
+  test('should generate an array of objects:', () => {
+    expect(typeof fakeBusinesses[0]).toBe('object');
+  });
+  test('should have 10 properties:', () => {
+    expect(Object.keys(fakeBusinesses[0]).length).toBe(10);
+  });
+});
 
 // describe('metatag generation', () => {
 //   test('should generate an array of metatags:', () => {
