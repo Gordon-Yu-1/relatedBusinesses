@@ -12,55 +12,21 @@ class Ad extends React.Component {
 
   render() {
     return (
-      <div class="adSection">
+      <div className="adSection">
         <h1>Hello World</h1>
-        <ul class="adSectionList">
-          <li class="adSectionListItem"> List Item
+        <ul className="adSectionList">
+          <li className="adSectionListItem"> ScrumdiddlyUmptious?
             {/* <AdContent /> */}
           </li>
-          <li class="adSectionListItem"> List Item
+          <li className="adSectionListItem"> Whatever comes after that mess...
             {/* <AdContent /> */}
           </li>
         </ul>
-          
       </div>
     );
   }
 }
 // let element = <App name="World" />;
-const Scoreboard = props => (
-  <div id="score">
-    { props.scores.map(thingy => <Score name={props.name} score={thingy} />)}
-  </div>
-);
 
-class Score extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return <h2> {this.props.name}: <br /> {this.props.score}!</h2>;
-  }
-}
-
-class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      <h2> Hello, <br /> {this.props.name}! </h2>);
-  }
-}
-
-
-ReactDOM.render(<App name="Smith" />, document.getElementById('app'));
+ReactDOM.render(<Ad id="123" />, document.getElementById('ad'));
 
