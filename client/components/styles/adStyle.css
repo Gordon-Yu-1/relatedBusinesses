@@ -1,0 +1,85 @@
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .sidebar {
+    float: left;
+    width: 217.125px;
+    height: 222px;
+    padding: 0 15px;
+    font-size: 12px
+  }
+  
+  .username {
+    color: #0073bb;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .userLocation {
+    padding: 5px 0;
+    font-weight: bold;
+  }
+  
+  .userInfo {
+    float:left;
+  }
+  
+  .sidebarIcons {
+    font-size: 15px;
+    margin-right: 5px;
+    color: #f15c00;
+  }
+  
+  .statContainer {
+    height: 16px;
+    margin-bottom: 2px;
+    display: table;
+  }
+  
+  .figures {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 16px;
+    height: 16px;
+  }
+  
+  .optionContainer {
+    color: #0073bb;
+    width: 217px;
+  }
+  
+  .sidebarOptionIcon {
+    font-size: 14px;
+    width: 18px;
+    height: 19px;
+    padding: 3px 6px 3px 0;
+    float: left;
+    line-height: 19px;
+  }
+  
+  .sidebarOptionLabel {
+    width: 187px;
+    height: 19px;
+    padding: 3px 0;
+    font-weight: bold;
+    font-size: 12px;
+    border-bottom: 1px solid #e6e6e6;
+    float: left;
+    line-height: 19px;
+  }
+  
+  .passportContainer {
+    width: 217px;
+    overflow: auto;
+    font-size: 12px;
+    padding-bottom: 5px;
+  }
+  
+  .noBorder {
+    border-bottom-style: none;
+  }
