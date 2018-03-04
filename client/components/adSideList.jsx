@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AdItem from './adItem';
 import style from './styles/adList.css';
 
 const AdSideList = props => (
-  <div id="adSideList">
-    { props.businesses.map(business => <h3 className={style.adList}>AD ITEM HERE </h3>)}
+  <div className={style.adList}>
+    { props.businesses.map(business => <li className={style.listEntry}><AdItem biz={business} /></li>)}
   </div>
 );
 
