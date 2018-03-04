@@ -1,9 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './styles/adList.css';
 
-let AdSideList = props => (
+const AdSideList = props => (
   <div id="adSideList">
-    <h2>adSideList</h2>
-    { props.businesses.map(business => <adItem biz={business} />)}
+    { props.businesses.map(business => <h3 className={style.adList}>AD ITEM HERE </h3>)}
   </div>
 );
+
+AdSideList.propTypes = {
+  businesses: PropTypes.arrayOf(PropTypes.object),
+};
+
+AdSideList.defaultProps = {
+  businesses: [],
+};
+
+export default AdSideList;

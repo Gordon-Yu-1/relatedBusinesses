@@ -25,15 +25,15 @@ class Ad extends React.Component {
         </div>
         <span className={style.adType}>Center Top Ads</span>
         <ul className={style.businessName}>
-          AD CENTER LIST HERE
+          <AdCenterList businesses={this.state.centerAds} />
         </ul>
         <span className={style.adType}>SideBar Ads</span>
         <ul className={style.businessName}>
-          AD SIDE LIST HERE
+          <AdSideList businesses={this.state.sideAds} />
         </ul>
         <span className={style.adType}>People Also Viewed</span>
         <ul className={style.businessName}>
-          PEOPLE VIEWED HERE
+          <PeopleViewed businesses={this.state.peopleViewed} />
         </ul>
       </div>
     );
