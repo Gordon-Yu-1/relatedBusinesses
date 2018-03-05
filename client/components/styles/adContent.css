@@ -2,14 +2,18 @@
     width: 700px;
     float: left;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 8px;
   }
   
   .adType {
     color: #D32323;
-    font-size: 21px;
+    font-size: 17px;
+
+
   }
   
   .businessName {
-    font-size: 21px;
+    font-size: 17px;
+
+
   }
