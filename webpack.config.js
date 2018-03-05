@@ -1,7 +1,7 @@
 const path = require('path');
 
 const appDir = path.resolve(__dirname, 'client');
-const buildDir = path.resolve(__dirname, 'public');
+const buildDir = path.resolve(__dirname, 'public/dist');
 
 module.exports = {
   entry: `${appDir}/index.jsx`,
