@@ -38,7 +38,7 @@ const save = (businesses) => {
   });
 };
 
-const retrieve = (num = 5) => {
+const retrieve = (num = 10) => {
   return new Promise((resolve, reject) => {
     Business.find()
       .sort('-avgRating')

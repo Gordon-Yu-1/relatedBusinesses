@@ -6,15 +6,12 @@ const router = require('./router.js');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/welp');
-
 app.use(express.static(path.join(__dirname, '/../public')));
-const app = express();
 
 const host = '127.0.0.1';
 const port = 3000;
 
-app.listen(3000, ()=>{
+app.listen(3000, () => {
   console.log('Now listening on port ', port);
 });
 
@@ -25,11 +22,18 @@ app.use(express.static(`${__dirname}/../public/dist`));
 // try to find it
 
 app.get('/test', (req, res) => {
-  res.send('hello');
+  database.retrieve(10)
+    .then((relatedBizs) => {
+      console.log('Inside Test!');
+      res.send('Yellow');
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
 });
 
 
-app.use('/businesses', router);
+app.use('/', router);
 
 module.exports = app;
 
