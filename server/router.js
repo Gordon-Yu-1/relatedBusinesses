@@ -19,9 +19,16 @@ router.route('/favicon.ico')
     res.end();
   });
 
-router.route('/')
+router.route('/test')
   .get((req, res) => {
-    res.end();
+    database.retrieve(10)
+      .then((dataset) => {
+        console.log('Inside Test!');
+        res.send('Yellow');
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
   });
 
 module.exports = router;
