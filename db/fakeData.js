@@ -3,6 +3,7 @@ const database = require('./seed_db');
 
 const generateSingleRelatedBusiness = () => {
   const singleFakeBiz = {};
+  singleFakeBiz.id = 12398712398;
   singleFakeBiz.businessName = faker.company.companyName;
   singleFakeBiz.firstImage = faker.image.business;
   singleFakeBiz.latitude = faker.address.latitude;
