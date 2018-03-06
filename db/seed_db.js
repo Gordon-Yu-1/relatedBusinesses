@@ -51,8 +51,8 @@ const retrieve = (num = 5) => {
 
 // console.log('made the schema');
 
-// module.exports.save = save;
-// module.exports.retrieve = retrieve;
+module.exports.save = save;
+module.exports.retrieve = retrieve;
 
 module.exports.Business = Business;
 

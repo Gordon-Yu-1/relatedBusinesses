@@ -1,6 +1,14 @@
 const express = require('express');
 const parser = require('body-parser');
 const database = require('../db/seed_db.js');
+const path = require('path');
+const router = require('./router.js');
+
+const app = express();
+
+mongoose.connect('mongodb://localhost/welp');
+
+app.use(express.static(path.join(__dirname, '/../public')));
 const app = express();
 
 const host = '127.0.0.1';
@@ -19,4 +27,9 @@ app.use(express.static(`${__dirname}/../public/dist`));
 app.get('/test', (req, res) => {
   res.send('hello');
 });
+
+
+app.use('/businesses', router);
+
+module.exports = app;
 
