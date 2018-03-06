@@ -1,5 +1,5 @@
 const faker = require('faker');
-
+const database = require('./seed_db');
 
 const generateSingleRelatedBusiness = () => {
   const singleFakeBiz = {};
@@ -40,6 +40,9 @@ const generateManyRelatedBizs = () => {
 };
 
 const fakeRelatedBusinesses = generateManyRelatedBizs();
+
+database.Business // model with access to the connection
+
 module.exports = fakeRelatedBusinesses;
 
 // console.log(generateManyRelatedBizs());

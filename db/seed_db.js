@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const Promise = require('bluebird');
 
-mongoose.connect('mongodb://127.0.0.1:27107');
+mongoose.connect('mongodb://127.0.0.1:27017');
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log('DB!');
