@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/related');
+mongoose.connect('mongodb://127.0.0.1:27107');
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log('DB!');
+});
 
 const relatedBizSchema = mongoose.Schema({
   id: Number,
@@ -47,5 +51,9 @@ const retrieve = (num = 5) => {
 
 // console.log('made the schema');
 
-module.exports.save = save;
-module.exports.retrieve = retrieve;
+// module.exports.save = save;
+// module.exports.retrieve = retrieve;
+
+module.exports.Business = Business;
+
+// export the model and use native methods rather than passing these fns around.
