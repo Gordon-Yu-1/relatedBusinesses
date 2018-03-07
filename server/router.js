@@ -3,14 +3,19 @@ const database = require('../db/seed_db.js');
 
 const router = express.Router();
 
-router.route('/businessId')
+router.route('/')
   .get((req, res) => {
-    database.retrieve(10)
-      .then((relatedBizs) => {
-        res.send(relatedBizs);
+    res.status(200).send();
+  });
+
+router.route('/biz/:bizId')
+  .get((req, res) => {
+    database.retrieve(req.params.bizId)
+      .then((data) => {
+        res.status(200).send(JSON.stringify(data));
       })
       .catch((error) => {
-        res.status(500).send(error);
+        console.log('Error with retrieval, ', error);
       });
   });
 
