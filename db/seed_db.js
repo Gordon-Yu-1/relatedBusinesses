@@ -1,10 +1,12 @@
 
 const mongoose = require('mongoose');
 const dupe = require('./Sues-fake-data.js');
+const teamMockup = require('./mockupData.js');
+const fakeRelatedBizGenerator = require('./fakeData.js');
 // mongoose.Promise = require('bluebird');
 // const Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/related');
+mongoose.connect('mongodb://localhost/related'); // name of db = related
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log('Connection to the DB established!!');
@@ -26,12 +28,10 @@ const relatedBizSchema = mongoose.Schema({
   listsWithThisBiz: [String], // double check this syntax
 });
 
-const BusinessModel = mongoose.model('relateds', relatedBizSchema);
+const BusinessModel = mongoose.model('relateds', relatedBizSchema); // name of collection = relateds
 
 const save = (business) => {
-  let bizCollection = new BusinessModel(business);
-  BusinessModel.insertOne()
-  bizCollection.collection.insertOne(business);
+  BusinessModel.insertOne(business);
 };
 
 const saveMany = (array) => {
@@ -41,7 +41,7 @@ const saveMany = (array) => {
   }
 };
 
-saveMany(dupe);
+saveMany(dupe); // testing of insertion to db
 
 // const save = (businesses) => {
 //   businesses.forEach((business) => {
