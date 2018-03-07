@@ -30,10 +30,10 @@ const generateSingleRelatedBusiness = () => {
   return singleFakeBiz;
 };
 
-const generateManyRelatedBizs = () => {
-  // always will generate 5 businessesrelated to an input biz.
+const generateManyRelatedBizs = () => { // given a particular mainPage biz, generate 10 relatedBizs for Ads
+  // always will generate 10 businesses related to an input biz.
   const relatedBusinesses = [];
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < 10; i += 1) {
     relatedBusinesses.push(generateSingleRelatedBusiness());
   }
   return relatedBusinesses;

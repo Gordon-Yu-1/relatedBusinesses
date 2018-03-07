@@ -7,8 +7,10 @@ const dupe = require('./Sues-fake-data.js');
 mongoose.connect('mongodb://localhost/related');
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log('DB!');
+  console.log('Connection to the DB established!!');
 });
+
+// Subschema
 
 const relatedBizSchema = mongoose.Schema({
   id: Number,
@@ -24,10 +26,11 @@ const relatedBizSchema = mongoose.Schema({
   // listsWithThisBiz: Array, // double check this syntax
 });
 
-const BusinessModel = mongoose.model('Related', relatedBizSchema);
+const BusinessModel = mongoose.model('relateds', relatedBizSchema);
 
 const save = (business) => {
   let bizCollection = new BusinessModel(business);
+  BusinessModel.insertOne()
   bizCollection.collection.insertOne(business);
 };
 

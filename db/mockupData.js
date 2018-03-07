@@ -1,3 +1,4 @@
+// shared logic among entire team for generating first 200 businesses.
 const names = ['Oleg\'s', 'Nick\'s', 'John\'s', 'Melvin\'s', 'Andrea\'s', 'Toby\'s'];
 const food = ['Burger', 'Pizza', 'Hot Dog', 'Sandwich', 'Sushi', 'Curry'];
 const suffix = ['Palace', 'Fusion', 'Saloon', 'Reactor', 'Emporium', 'Shack', 'Buffet'];
@@ -8,6 +9,7 @@ const suffixUser = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 const mockupData = { businesses: [], users: [] };
+
 let count = 200;
 for (let i = 0; i < names.length; i += 1) {
   for (let j = 0; j < food.length; j += 1) {
@@ -32,4 +34,4 @@ for (let i = 0; i < title.length; i += 1) {
 }
 mockupData.users = mockupData.users.slice(0, 200);
 
-// console.log(mockupData);
+module.exports = mockupData;
