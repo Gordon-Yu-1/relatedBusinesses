@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "a",
+  "version": "a",
+  "description": "a",
   "author": "awhitneye",
   "license": "Hack Reactor",
   "engines": {
@@ -15,18 +15,13 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "bluebird": "^3.5.1",
-    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
     "mongo": "^0.1.0",
     "mongod": "^2.0.0",
     "mongoose": "^5.0.9",
-    "postgresql": "0.0.1",
     "prop-types": "^15.6.1",
-    "psql": "0.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "request": "^2.83.0"
