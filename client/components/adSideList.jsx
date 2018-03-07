@@ -5,7 +5,7 @@ import style from './styles/adList.css';
 
 const AdSideList = props => (
   <div className={style.adList}>
-    { props.businesses.map(business => <li className={style.listEntry}>Here<AdItem biz={business} /></li>)}
+    { props.businesses.map(business => <li className={style.listEntry}>a<AdItem biz={business} /></li>)}
   </div>
 );
 
