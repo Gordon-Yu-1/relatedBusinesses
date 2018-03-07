@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import url from 'url';
+import axios from 'axios';
 import style from './components/styles/adContent.css';
 import AdSideList from './components/adSideList';
 import AdCenterList from './components/adCenterList';
@@ -11,12 +13,26 @@ class Ad extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      relatedBizs: dummy, // a result of a GET request to the server/db for the given businessID
-      centerAds: dummy, // will be the above, split into parts
-      sideAds: dummy, // will be the above, split into parts
-      peopleViewed: dummy, // will be the above, split into parts
+      centerAds: dummy,
+      sideAds: dummy,
+      peopleViewed: dummy,
       currentBiz: this.props.originalId, // the id of the product detail page's currently featured biz
     };
+  }
+
+  componentWillMount() {
+    const thisUrl = url(document.location);
+    const path = thisUrl.pathname; // should result in /biz/SOME_ID
+    const reqId = path.split('/')[1]; // should result in the ID
+    axios.get(`http://127.0.0.1:3000/related/${reqId}/`)
+      .then((response) => {
+        this.setState({ centerAds: response.data.slice(0, 3) });
+        this.setState({ sideAds: response.data.slice(3, 6) });
+        this.setState({ peopleViewed: response.data.slice(6, 10) });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {

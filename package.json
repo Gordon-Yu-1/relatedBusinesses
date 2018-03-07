@@ -15,6 +15,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "css-loader": "^0.28.10",
     "express": "^4.16.2",
     "faker": "^4.1.0",

@@ -3,12 +3,12 @@ const database = require('../db/database.js');
 
 const router = express.Router();
 
-router.route('/')
-  .get((req, res) => {
-    res.status(200).send('Hello');
-  });
+// router.route('/')
+//   .get((req, res) => {
+//     res.status(200).send('Hello');
+//   });
 
-router.route('/biz/:bizId')
+router.route('/related/:bizId')
   .get((req, res) => {
     database();
     database.retrieve(203)
