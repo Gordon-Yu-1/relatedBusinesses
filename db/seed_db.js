@@ -53,7 +53,7 @@ const promise = new Promise((res, rej) => {
 
 const retrieve = (bizId) => { 
   return new Promise((resolve, reject) => {
-    BusinessModel.find({ id: bizId })
+    BusinessModel.find({ "originalId": bizId })
       .sort('-avgRating')
       .limit(10)
       .exec()

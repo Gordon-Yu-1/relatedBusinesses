@@ -8,9 +8,9 @@ router.route('/')
     res.status(200).send('Hello');
   });
 
-router.route('/biz/:bizId')
+router.route('/biz/203')
   .get((req, res) => {
-    database.retrieve(req.params.bizId)
+    database.retrieve(203)
       .then((data) => {
         res.status(200).send(JSON.stringify(data));
       })

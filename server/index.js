@@ -12,7 +12,7 @@ app.listen(3000, () => {
   console.log('Now listening on port ', port);
 });
 
-app.use('/biz/:bizId', express.static(`${__dirname}/../public/dist`));
+app.use('/biz/203', express.static(`${__dirname}/../public/dist`));
 
 // create an endpoint to serve
 // manually save a file through mongod
