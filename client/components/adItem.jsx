@@ -8,10 +8,10 @@ const AdItem = props => (
       <span className={style.ad}>Ad</span><span className={style.bizTitle}>{props.biz.businessName}</span>
       <img className={style.bizPic} src={props.biz.firstImage} alt="https://rlv.zcache.com/happy_smiley_face_round_stickers-rbdcd90a58b8e40a9b895e7c2fd1e65ef_v9waf_8byvr_540.jpg" />
       <div>
-        <span>stars</span><span>No. of reviews</span>
+        <img className={style.rating} src="http://images.nymag.com/news/intelligencer/intelposts120326_starstruck_560.jpg" alt="http://images.nymag.com/news/intelligencer/intelposts120326_starstruck_560.jpg"/><span className={style.rating}>{props.biz.quantityRatings} reviews</span>
       </div>
       <div>
-        <span>reviewtext</span>
+        <span>{props.biz.fullReview}</span>
       </div>
       <div>
         <span className={style.metatag}>metatag, metatag, metagataga</span>

@@ -29,6 +29,9 @@
   color: #999 !important;
 }
 
-.rating4 {
-  
+.rating {
+  width: 102px;
+  height: 40px;
+  color: #333;
+  font-size: 14px
 }
