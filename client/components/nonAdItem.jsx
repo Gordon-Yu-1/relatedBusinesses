@@ -8,7 +8,7 @@ const NonAdItem = props => (
       <span className={style.bizTitle}>{props.biz.businessName}</span>
       <img className={style.bizPic} src={props.biz.firstImage} alt="https://rlv.zcache.com/happy_smiley_face_round_stickers-rbdcd90a58b8e40a9b895e7c2fd1e65ef_v9waf_8byvr_540.jpg" />
       <div>
-        <span>stars</span><span>No. of reviews</span>
+        <img className={style.rating}{props.biz.avgRating} src={starsomethinghere} alt=""/><span>No. of reviews</span>
       </div>
       <div>
         <span>reviewtext</span>
