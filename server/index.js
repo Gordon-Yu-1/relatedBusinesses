@@ -12,10 +12,6 @@ app.listen(3000, () => {
 
 app.use(express.static(`${__dirname}/../public`));
 
-// create an endpoint to serve
-// manually save a file through mongod
-// try to find it
-
 app.use('/', router);
 
 module.exports = app;
