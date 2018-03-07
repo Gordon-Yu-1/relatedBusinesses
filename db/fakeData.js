@@ -1,8 +1,8 @@
 const faker = require('faker');
 
-
-const generateSingleRelatedBusiness = () => {
+const generateSingleRelatedBusiness = (inputId) => {
   const singleFakeBiz = {};
+  singleFakeBiz.originalId = inputId;
   singleFakeBiz.id = Math.floor(Math.random() * 1000000);
   singleFakeBiz.businessName = faker.company.companyName;
   singleFakeBiz.firstImage = faker.image.business;
@@ -33,14 +33,17 @@ const generateSingleRelatedBusiness = () => {
   return singleFakeBiz;
 };
 
-const generateManyRelatedBizs = () => {
+const generateManyRelatedBizs = (someArray, cb) => {
   // given a particular mainPage biz, generate 10 relatedBizs for Ads
   // always will generate 10 businesses related to an input biz.
-  const relatedBusinesses = [];
-  for (let i = 0; i < 10; i += 1) {
-    relatedBusinesses.push(generateSingleRelatedBusiness());
+  const allRelatedBusinesses = [];
+  for (let j = 0; j < someArray.length; j += 1) {
+    const thisBiz = someArray[i];
+    for (let i = 0; i < 10; i += 1) {
+      allRelatedBusinesses.push(generateSingleRelatedBusiness(thisBiz.id));
+    }
   }
-  return relatedBusinesses;
+  cb(null, allRelatedBusinesses);
 };
 
 

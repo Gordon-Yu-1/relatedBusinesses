@@ -8,7 +8,7 @@ const firstName = ['Melvin', 'Fred', 'Ivy', 'Sue'];
 const suffixUser = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
-const mockupData = { businesses: [], users: [] };
+let mockupData = { businesses: [], users: [] };
 
 let count = 200;
 for (let i = 0; i < names.length; i += 1) {
