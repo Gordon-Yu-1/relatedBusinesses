@@ -4,19 +4,28 @@ import style from './styles/adStyle.css';
 
 const NonAdItem = props => (
   <div>
-    <div> One
-      <img className={style.bizPic} src="http://www.academy-cube.com/wp-content/uploads/2015/05/iStock_000023732304_XXXLarge.jpg" alt="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Emotes-face-smile-icon.png" />
-   
+    <div>
+      <span className={style.bizTitle}>{props.biz.businessName}</span>
+      <img className={style.bizPic} src={props.biz.firstImage} alt="https://rlv.zcache.com/happy_smiley_face_round_stickers-rbdcd90a58b8e40a9b895e7c2fd1e65ef_v9waf_8byvr_540.jpg" />
+      <div>
+        <span>stars</span><span>No. of reviews</span>
+      </div>
+      <div>
+        <span>reviewtext</span>
+      </div>
+      <div>
+        <span className={style.metatag}>metatag, metatag, metagataga</span>
+      </div>
     </div>
   </div>
 );
 
 NonAdItem.propTypes = {
-  biz: PropTypes.number,
+  biz: PropTypes.object,
 };
 
 NonAdItem.defaultProps = {
-  biz: 2,
+  biz: {},
 };
 
 export default NonAdItem;

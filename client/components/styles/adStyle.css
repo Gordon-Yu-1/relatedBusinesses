@@ -8,3 +8,23 @@
     border-width: 1px;
     border-color: orange
   }
+
+.bizTitle {
+  border-color: red;
+  font-size: 18px;
+  color: #0073bb
+}
+
+.ad {
+  margin-right: 5px;
+  padding: 2px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #ebac2c
+}
+
+.metatag {
+  font-size: 14px;
+  color: #999 !important;
+}

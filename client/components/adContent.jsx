@@ -14,7 +14,7 @@ class Ad extends React.Component {
       centerAds: dummy, // will be the above, split into parts
       sideAds: dummy, // will be the above, split into parts
       peopleViewed: dummy, // will be the above, split into parts
-      currentBiz: props.originalId, // the id of the product detail page's currently featured biz
+      currentBiz: this.props.originalId, // the id of the product detail page's currently featured biz
     };
   }
 
@@ -23,7 +23,7 @@ class Ad extends React.Component {
       <div className={style.allContent}>
         <div>
           <span className={style.adType}>Recommended Businesses for </span>
-          <span className={style.businessName}>OriginalId {this.state.currentBiz}</span>
+          <span className={style.businessName}>Business Id {this.state.currentBiz}</span>
         </div>
         <div className={style.adType}>Center Top Ads</div>
         <ul className={style.businessName}>
