@@ -13,23 +13,20 @@ class Ad extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      centerAds: dummy,
-      sideAds: dummy,
-      peopleViewed: dummy,
+      relatedBizs: dummy,
       currentBiz: this.props.originalId, // the id of the product detail page's currently featured biz
     };
+    console.log('this was consturicisflkadf');
   }
 
   componentWillMount() {
-    const thisUrl = url(document.location);
+    const thisUrl = new url(document.location);
     const path = thisUrl.pathname;
     console.log('Path', path); // should result in /biz/SOME_ID
     const reqId = path.split('/')[1]; // should result in the ID
-    axios.get(`http://127.0.0.1:3000/related/${reqId}/`)
-      .then((response) => {
-        this.setState({ centerAds: response.data.slice(0, 3) });
-        this.setState({ sideAds: response.data.slice(3, 6) });
-        this.setState({ peopleViewed: response.data.slice(6, 10) });
+    axios.get(`http://127.0.0.1:9002/related/${reqId}/`)
+      .then((res) => {
+        this.setState({ relatedBizs: res.data });
       })
       .catch((error) => {
         console.log(error);
@@ -45,15 +42,15 @@ class Ad extends React.Component {
         </div>
         <div className={style.adType}>Center Top Ads</div>
         <ul className={style.businessName}>
-          <AdCenterList businesses={this.state.centerAds} />
+          <AdCenterList businesses={this.state.relatedBizs.slice(0, 2)} />
         </ul>
         <div className={style.adType}>SideBar Ads</div>
         <ul className={style.businessName}>
-          <AdSideList businesses={this.state.sideAds} />
+          <AdSideList businesses={this.state.relatedBizs.slice(2, 4)} />
         </ul>
         <div className={style.adType}>People Also hiewed</div>
         <ul className={style.businessName}>
-          <PeopleViewed businesses={this.state.peopleViewed} />
+          <PeopleViewed businesses={this.state.relatedBizs.slice(4, 6)} />
         </ul>
       </div>
     );

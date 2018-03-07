@@ -1,4 +1,4 @@
-module.exports = [
+const dataset = [
   {
     originalId: 128,
     businessName: 'Bobs Burgers',
@@ -49,3 +49,5 @@ module.exports = [
     // listsWithThisBiz: ['burgers in SF', 'burgerplaces oakland'],
   },
 ];
+
+export default dataset;
