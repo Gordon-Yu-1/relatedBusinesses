@@ -31,7 +31,8 @@ const relatedBizSchema = mongoose.Schema({
 const BusinessModel = mongoose.model('relateds', relatedBizSchema); // name of collection = relateds
 
 const save = (business) => {
-  BusinessModel.insertOne(business);
+  let bizCollection = new BusinessModel(business);
+  bizCollection.collection.insertOne(business);
 };
 
 const saveMany = (array) => {
