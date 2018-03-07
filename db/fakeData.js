@@ -10,24 +10,19 @@ const generateSingleRelatedBusiness = (inputId) => {
   singleFakeBiz.avgRating = Math.floor(Math.random() * 21) / 4;
   singleFakeBiz.quantityRatings = Math.floor(Math.random() * 18000);
   singleFakeBiz.fullReview = faker.lorem.paragraph;
-  singleFakeBiz.oneLineReview = faker.lorem.sentence;
+  singleFakeBiz.oneLineReview = faker.lorem.sentence; 
   singleFakeBiz.metatags = ['hardCodedMetatagList', 'burgers', 'tacos', 'tacqueria', 'steve jobs'];
   singleFakeBiz.listsWithThisBiz = ['These Lists are Hardcoded', 'Burger Places in SF', 'Barbara Johnsons Favorite Places', 'Bobs Fave Tacquerias'];
   // singleFakeBiz.metatags = [];
-  // singleFakeBiz.metatags.length = Math.ceil(Math.random() * 5);
-  // for (let j = 0; j < singleFakeBiz.metatags.length; j += 1) {
-  //   singleFakeBiz.metatags[j] = faker.commerce.department;
+  // for (let j = 0; j < Math.ceil(Math.random() * 5); j += 1) {
+  //   singleFakeBiz.metatags.push(faker.commerce.department);
   // }
   // singleFakeBiz.listsWithThisBiz = [];
-  // const listLength = Math.floor(Math.random() * 4);
-  // if (listLength < 0) {
-  //   for (let k = 0; k < listLength; k += 1) {
-  //     singleFakeBiz.listsWithThisBiz.push({
-  //       listName: faker.lorem.words,
-  //       listBusinessesTotal: singleFakeBiz.listsWithThisBiz.length,
-  //       listDescription: faker.lorem.sentences,
-  //     });
-  //   }
+  // for (let k = 0; k < Math.floor(Math.random() * 4); k += 1) {
+  //   singleFakeBiz.listsWithThisBiz.push({
+  //     listName: faker.lorem.words,
+  //     listDescription: faker.lorem.sentences,
+  //   });
   // }
   return singleFakeBiz;
 };
