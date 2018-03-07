@@ -11,6 +11,7 @@
     "webpack": "webpack",
     "build": "webpack -d",
     "build:watch": "webpack -d --watch",
+    "seed": "node db/seed_db.js",
     "test": "jest --coverage"
   },
   "dependencies": {
