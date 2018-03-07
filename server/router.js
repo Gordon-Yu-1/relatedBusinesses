@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.route('/')
   .get((req, res) => {
-    res.status(200).send();
+    res.status(200).send('Hello');
   });
 
 router.route('/biz/:bizId')

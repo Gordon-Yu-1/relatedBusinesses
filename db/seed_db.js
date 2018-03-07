@@ -43,58 +43,25 @@ const saveMany = (array, cb) => {
   }
 };
 
-// saveMany(dupe); // testing of insertion to db
-
 const promise = new Promise((res, rej) => {
-  // generating the fake data first, then execute res on the
-  // for (let i = 0; i < teamMockup.length; i += 1) {
   fakeRelatedBizGenerator(teamMockup, (err, data) => {
-    console.log('This is the data ', data);
     res(data);
   });
-  // }
 }).then((resolvedThing) => {
-  console.log('The thing is ', resolvedThing);
   saveMany(resolvedThing);
 });
 
-
-// const seedDatabse = (setOfBusinesses, relatedBizGeneratorFn, cb) => {
-//   for (let i = 0; i < setOfBusinesses.length; i += 1) {
-//     const thisBiz = setOfBusinesses[i];
-//     relatedBizGeneratorFn(thisBiz.id, cb);
-//   }
-// };
-
-// seedDatabse(teamMockup, fakeRelatedBizGenerator, saveMany);
-
-// const save = (businesses) => {
-//   businesses.forEach((business) => {
-//     Business.find({ id: business.id })
-//       .then((docs) => {
-//         if (docs.length === 0) {
-//           Business.create(business);
-//         }
-//       })
-//       .catch(error => console.error(error));
-//   });
-// };
-
-const retrieve = (num = 10) => {
+const retrieve = (bizId) => { 
   return new Promise((resolve, reject) => {
     BusinessModel.find({ id: bizId })
       .sort('-avgRating')
-      .limit(num)
+      .limit(10)
       .exec()
       .then(results => resolve(results))
       .catch(error => reject(error));
   });
 };
 
-// console.log('made the schema');
-
 // module.exports.save = save;
 module.exports.retrieve = retrieve;
 module.exports.Business = BusinessModel;
-
-// export the model and use native methods rather than passing these fns around.
