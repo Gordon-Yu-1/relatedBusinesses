@@ -8,7 +8,7 @@ const firstName = ['Melvin', 'Fred', 'Ivy', 'Sue'];
 const suffixUser = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
-let mockupData = { businesses: [], users: [] };
+const mockupData = { businesses: [], users: [] };
 
 let count = 200;
 for (let i = 0; i < names.length; i += 1) {
@@ -34,4 +34,4 @@ for (let i = 0; i < title.length; i += 1) {
 }
 mockupData.users = mockupData.users.slice(0, 200);
 
-module.exports = mockupData;
+module.exports = mockupData.businesses;

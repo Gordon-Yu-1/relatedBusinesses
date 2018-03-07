@@ -17,7 +17,6 @@ connection.once('open', () => {
 
 const relatedBizSchema = mongoose.Schema({
   originalId: Number,
-  id: Number,
   businessName: String,
   firstImage: String,
   latitude: Number,
