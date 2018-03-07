@@ -43,7 +43,7 @@ const generateManyRelatedBizs = () => {
   return relatedBusinesses;
 };
 
-const fakeRelatedBusinesses = generateManyRelatedBizs();
-module.exports = fakeRelatedBusinesses;
+
+module.exports = generateManyRelatedBizs;
 
 // console.log(generateManyRelatedBizs());

@@ -22,8 +22,8 @@ const relatedBizSchema = mongoose.Schema({
   quantityRatings: Number,
   fullReview: String,
   oneLineReview: String,
-  // metatags: Array, // double check this syntax
-  // listsWithThisBiz: Array, // double check this syntax
+  metatags: [String], // double check this syntax
+  listsWithThisBiz: [String], // double check this syntax
 });
 
 const BusinessModel = mongoose.model('relateds', relatedBizSchema);
@@ -34,14 +34,14 @@ const save = (business) => {
   bizCollection.collection.insertOne(business);
 };
 
-const dupeSeed = (array) => {
+const saveMany = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     console.log(array[i]);
     save(array[i]);
   }
 };
 
-dupeSeed(dupe);
+saveMany(dupe);
 
 // const save = (businesses) => {
 //   businesses.forEach((business) => {
