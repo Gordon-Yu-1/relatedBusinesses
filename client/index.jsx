@@ -22,7 +22,8 @@ class Ad extends React.Component {
 
   componentWillMount() {
     const thisUrl = url(document.location);
-    const path = thisUrl.pathname; // should result in /biz/SOME_ID
+    const path = thisUrl.pathname;
+    console.log('Path', path); // should result in /biz/SOME_ID
     const reqId = path.split('/')[1]; // should result in the ID
     axios.get(`http://127.0.0.1:3000/related/${reqId}/`)
       .then((response) => {

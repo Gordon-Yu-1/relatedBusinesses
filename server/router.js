@@ -3,15 +3,12 @@ const database = require('../db/database.js');
 
 const router = express.Router();
 
-// router.route('/')
-//   .get((req, res) => {
-//     res.status(200).send('Hello');
-//   });
-
 router.route('/related/:bizId')
   .get((req, res) => {
-    database();
-    database.retrieve(203)
+    console.log('params: ', req.params);
+    database.openConnection();
+    console.log('params: ', req.params);
+    database.retrieve(req.params.reqId)
       .then((data) => {
         res.status(200).send(JSON.stringify(data));
       })
