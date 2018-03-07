@@ -80,22 +80,21 @@ const promise = new Promise((res, rej) => {
 //   });
 // };
 
-// const retrieve = (num = 10) => {
-//   return new Promise((resolve, reject) => {
-//     Business.find()
-//       .sort('-avgRating')
-//       .limit(num)
-//       .exec()
-//       .then(results => resolve(results))
-//       .catch(error => reject(error));
-//   });
-// };
+const retrieve = (num = 10) => {
+  return new Promise((resolve, reject) => {
+    BusinessModel.find({ id: bizId })
+      .sort('-avgRating')
+      .limit(num)
+      .exec()
+      .then(results => resolve(results))
+      .catch(error => reject(error));
+  });
+};
 
 // console.log('made the schema');
 
 // module.exports.save = save;
-// module.exports.retrieve = retrieve;
-
-// module.exports.Business = Business;
+module.exports.retrieve = retrieve;
+module.exports.Business = BusinessModel;
 
 // export the model and use native methods rather than passing these fns around.
