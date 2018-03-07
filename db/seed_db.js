@@ -36,7 +36,7 @@ const save = (business) => {
   bizCollection.collection.insertOne(business);
 };
 
-const saveMany = (array, cb) => {
+const saveMany = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     console.log('You got inside SaveMany!');
     save(array[i]);
@@ -51,15 +51,11 @@ const promise = new Promise((res, rej) => {
   saveMany(resolvedThing);
 });
 
-const retrieve = (bizId) => { 
-  return new Promise((resolve, reject) => {
-    BusinessModel.find({ "originalId": bizId })
-      .sort('-avgRating')
-      .limit(10)
-      .exec()
-      .then(results => resolve(results))
-      .catch(error => reject(error));
-  });
+const retrieve = (bizId) => {
+  BusinessModel.find({ originalId: bizId })
+    .sort('-avgRating')
+    .limit(10)
+    .exec();
 };
 
 // module.exports.save = save;

@@ -1,6 +1,4 @@
 const express = require('express');
-const database = require('../db/seed_db.js');
-const path = require('path');
 const router = require('./router.js');
 
 const app = express();
@@ -12,7 +10,7 @@ app.listen(3000, () => {
   console.log('Now listening on port ', port);
 });
 
-app.use('/biz/203', express.static(`${__dirname}/../public/dist`));
+app.use(express.static(`${__dirname}/../public`));
 
 // create an endpoint to serve
 // manually save a file through mongod
