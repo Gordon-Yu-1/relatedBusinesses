@@ -6,7 +6,7 @@ const app = express();
 const host = '127.0.0.1';
 const port = 3000;
 
-app.use(express.static(`${__dirname}/../public`));
+app.use('/biz/:bizId', express.static(`${__dirname}/../public`));
 
 app.use('/', router);
 

@@ -1,11 +1,17 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/related'); // name of db = related
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log('Connection to the DB established!!');
-});
+const openConnection = () => {
+  mongoose.connect('mongodb://localhost/related');
+  const connection = mongoose.connection;
+  connection.once('open', () => {
+    console.log('Connection to the DB established!!');
+  });
+};
+
+const closeConnection = () => {
+  mongoose.disconnect();
+};
 
 // Subschema
 
@@ -44,6 +50,8 @@ const retrieve = (bizId) => {
     .exec();
 };
 
+module.exports.openConnection = openConnection;
 module.exports.saveMany = saveMany;
 module.exports.retrieve = retrieve;
 module.exports.Business = BusinessModel;
+module.exports.closeConnection = closeConnection;

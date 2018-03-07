@@ -1,5 +1,5 @@
 const express = require('express');
-const database = require('../db/seed_db.js');
+const database = require('../db/database.js');
 
 const router = express.Router();
 
@@ -8,8 +8,9 @@ router.route('/')
     res.status(200).send('Hello');
   });
 
-router.route('/biz/203')
+router.route('/biz/:bizId')
   .get((req, res) => {
+    database();
     database.retrieve(203)
       .then((data) => {
         res.status(200).send(JSON.stringify(data));
