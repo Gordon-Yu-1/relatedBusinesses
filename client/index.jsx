@@ -14,16 +14,18 @@ class Ad extends React.Component {
     super(props);
     this.state = {
       relatedBizs: dummy,
-      currentBiz: this.props.originalId, // the id of the product detail page's currently featured biz
+      currentBiz: 1, // the id of the product detail page's currently featured biz
     };
-    console.log('this was consturicisflkadf');
+    // console.log('this is inside the constructed');
   }
 
   componentWillMount() {
-    const thisUrl = new url(document.location);
+    const thisUrl = document.location;
     const path = thisUrl.pathname;
-    console.log('Path', path); // should result in /biz/SOME_ID
-    const reqId = path.split('/')[1]; // should result in the ID
+    // console.log('Path', path); // should result in /biz/SOME_ID
+    const reqId = path.split('/')[2]; 
+    // console.log('reqId, ', reqId);// should result in the ID
+    this.state.currentBiz = reqId;
     axios.get(`http://127.0.0.1:9002/related/${reqId}/`)
       .then((res) => {
         this.setState({ relatedBizs: res.data });
@@ -48,7 +50,7 @@ class Ad extends React.Component {
         <ul className={style.businessName}>
           <AdSideList businesses={this.state.relatedBizs.slice(2, 4)} />
         </ul>
-        <div className={style.adType}>People Also hiewed</div>
+        <div className={style.adType}>People Also Viewed</div>
         <ul className={style.businessName}>
           <PeopleViewed businesses={this.state.relatedBizs.slice(4, 6)} />
         </ul>
@@ -58,11 +60,11 @@ class Ad extends React.Component {
 }
 
 Ad.propTypes = {
-  originalId: PropTypes.number,
+  currentBiz: PropTypes.number,
 };
 
 Ad.defaultProps = {
-  originalId: 0,
+  currentBiz: 0,
 };
 
 ReactDOM.render(<Ad />, document.getElementById('ad'));

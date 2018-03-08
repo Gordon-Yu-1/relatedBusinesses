@@ -3,11 +3,10 @@ const database = require('../db/database.js');
 
 const router = express.Router();
 
-router.route('/related')
+router.route('/related/:reqId')
   .get((req, res) => {
-    database.openConnection();
-    console.log('params', req.params)
-    database.retrieve(req.params.reqId)
+    const searchterm = parseInt(req.params.reqId, 10);
+    database.retrieve(searchterm)
       .then((data) => {
         res.status(200).send(JSON.stringify(data));
       })

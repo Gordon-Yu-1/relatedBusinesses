@@ -10,7 +10,7 @@ app.use('/biz/:bizId', express.static(`${__dirname}/../public`));
 
 app.use('/', router);
 
-app.listen(9002, () => {
+app.listen(port, host, () => {
   console.log('Related Bizs is now listening on port', port);
 });
 
