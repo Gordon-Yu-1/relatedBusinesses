@@ -35,9 +35,9 @@ From within the root directory:
 ```
 npm install -g webpack
 npm install
-npm run build
+npm run build  
 npm run seed
 npm start
 
 ```
-
+(if build watching is desired for editing, run build:watch instead of build)
