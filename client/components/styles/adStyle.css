@@ -6,7 +6,8 @@
     margin-right: 10px;
     border-style: solid;
     border-width: 1px;
-    border-color: orange
+    border-color: orange;
+    font-size: 10px;
   }
 
 .bizTitle {
