@@ -37,5 +37,7 @@ npm install -g webpack
 npm install
 npm run build
 npm run seed
+npm start
+
 ```
 
