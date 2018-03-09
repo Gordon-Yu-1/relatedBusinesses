@@ -13,15 +13,12 @@ class AdSide extends React.Component {
       relatedBizs: dummy,
       currentBiz: 1, // the id of the product detail page's currently featured biz
     };
-    // console.log('this is inside the constructed');
   }
 
   componentWillMount() {
     const thisUrl = document.location;
     const path = thisUrl.pathname;
-    // console.log('Path', path); // should result in /biz/SOME_ID
     const reqId = path.split('/')[2]; 
-    // console.log('reqId, ', reqId);// should result in the ID
     this.state.currentBiz = reqId;
     axios.get(`http://127.0.0.1:9002/related/${reqId}/`)
       .then((res) => {

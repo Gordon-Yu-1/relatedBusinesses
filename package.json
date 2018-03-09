@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cors": "^2.8.4",
     "css-loader": "^0.28.10",
     "express": "^4.16.2",
     "faker": "^4.1.0",
