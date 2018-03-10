@@ -52,4 +52,6 @@ AdSide.propTypes = {
 AdSide.defaultProps = {
   currentBiz: 0,
 };
+
+
 export default AdSide;

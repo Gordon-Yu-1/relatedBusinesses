@@ -8,7 +8,7 @@ const app = express();
 const host = '127.0.0.1';
 const port = 9002;
 
-app.use(cors());
+app.use(cors()); // all access
 app.use('/biz/:bizId', express.static(`${__dirname}/../public`));
 
 app.use('/', router);
