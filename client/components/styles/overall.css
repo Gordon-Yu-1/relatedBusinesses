@@ -5,58 +5,8 @@ body {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-body {
-  line-height: 1;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-ol, ul {
-  list-style: none;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-blockquote, q {
-  quotes: none;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}
-
-.fas.fa-star {
-  color: white;
-  font-size: 14px;
-  line-height: 15px;
-  padding: 1px 0;
-   border-style: solid;
-    border-width: 1px;
-    border-color: blue;
-}

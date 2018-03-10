@@ -56,5 +56,4 @@ AdCenter.defaultProps = {
   currentBiz: 0,
 };
 
-
 export default AdCenter;
